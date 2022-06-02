@@ -1,0 +1,20 @@
+public class Base {
+    int sobeDesce;
+    int andar;
+    int pessoas;
+
+    double mover() {
+        if (sobeDesce == 1) {
+            andar = andar + 1;
+        }
+        if (sobeDesce == 2) {
+            andar = andar - 1;
+        }
+        return andar;
+    }
+
+    public Base(int sobeDesce, int pessoas) {
+        this.sobeDesce = sobeDesce;
+        this.pessoas = pessoas;
+    }
+}
