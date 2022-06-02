@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class Main {
+
+  public static void main(String[] args) {
+    Scanner ler = new Scanner(System.in);
+
+    String original = "(1) => Subir";
+    
+    original += System.lineSeparator() + "(2) => Descer";
+    
+    System.out.println(original);
+    
+    int sobeDesce = ler.nextInt();
+
+
+    System.out.println("Quantidade de Andares");
+    int quantidadeAndar = ler.nextInt();
+    
+    System.out.println("Máximo de pessoas");
+    int maxPessoas = ler.nextInt();
+
+    Base base = new Base(sobeDesce, maxPessoas);
+
+    int andar = 0;
+
+    if (sobeDesce == 1) {
+      System.out.print("Primeiro Andar.");
+      System.out.print(System.lineSeparator());
+      if (andar == quantidadeAndar) {
+        System.out.print("Chegada.");
+      }
+      while (andar < quantidadeAndar) {
+        System.out.print("Andar" + base.mover());
+        System.out.print(System.lineSeparator());
+        andar = andar + 1;
+      }
+    }
+    if (sobeDesce == 2) {
+        System.out.print("O elevador está no " + base.mover());
+        System.out.print(System.lineSeparator());
+        andar = andar - 1;
+      }
+    }
+    System.out.print("Chegada");
+  }
+}
